@@ -71,7 +71,7 @@ public class DB {
 	}
 
 	public static void insertLeague(League league) {
-		String query = "";
+		String query = "insert into league(league_name) values (?)";
 
 		try (PreparedStatement insertStmt = db.conn.prepareStatement(query)) {
 
@@ -85,7 +85,7 @@ public class DB {
 	}
 
 	public static void updateLeague(League league) {
-		String query = "";
+		String query = "update league set league_name = ? where league_id = ?";
 
 		try (PreparedStatement updateStmt = db.conn.prepareStatement(query)) {
 
